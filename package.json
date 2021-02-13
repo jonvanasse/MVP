@@ -1,0 +1,22 @@
+{
+  "name": "talking-about-time",
+  "version": "1.0.0",
+  "description": "A two-dimensional UI component to organize conversations by when they occur relative to what time they are discussing...",
+  "main": "./server/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonvanasse/MVP.git"
+  },
+  "author": "Jon Vanasse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonvanasse/MVP/issues"
+  },
+  "homepage": "https://github.com/jonvanasse/MVP#readme"
+}
