@@ -1,4 +1,4 @@
-{/* eslint-disable camelcase */
+/* eslint-disable camelcase */
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -18,10 +18,10 @@ const postSchema = new mongoose.Schema({
   body: String,
   start: Date, // (past or recent)
   end: Date, // MUST be later than start
-  watchers: [
+  watchers: [{
     user_id: Number,
     up_down_watch: Number // will map 1 to upvote, 2 to downvote, and 3 to watch
-  ]
+  }],
   upvotes: Number, // Total # of 1s
   downvotes: Number, // Total # of 2s
   watch_no_vote: Number, // Total # of 3s
@@ -45,10 +45,10 @@ const daySchema = new mongoose.Schema({
     body: String,
     start: Date, // Date prediction was made
     end: Date, // Date the prediction is supposed to come true
-    watchers: [
+    watchers: [{
       user_id: Number,
       up_down_watch: Number // will map 1 to upvote, 2 to downvote, and 3 to watch
-    ]
+    }],
     upvotes: Number, // Total # of 1s
     downvotes: Number, // Total # of 2s
     watch_no_vote: Number, // Total # of 3s
@@ -60,7 +60,7 @@ const daySchema = new mongoose.Schema({
         handle: String,
         first_name: String,
         last_name: String,
-      }
+      },
       parent: Number, // comment_id or post_id
       children: [Number], //comment_ids
       body: String,
@@ -73,10 +73,10 @@ const daySchema = new mongoose.Schema({
     body: String,
     start: Date, // Date prediction was made
     end: Date, // Date the prediction is supposed to come true
-    watchers: [
+    watchers: [{
       user_id: Number,
       up_down_watch: Number // will map 1 to upvote, 2 to downvote, and 3 to watch
-    ]
+    }],
     upvotes: Number, // Total # of 1s
     downvotes: Number, // Total # of 2s
     watch_no_vote: Number, // Total # of 3s
@@ -88,7 +88,7 @@ const daySchema = new mongoose.Schema({
         handle: String,
         first_name: String,
         last_name: String,
-      }
+      },
       parent: Number, // comment_id or post_id
       children: [Number], //comment_ids
       body: String,
@@ -100,7 +100,6 @@ const daySchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 const Post = mongoose.model('Post', postSchema);
-const Comment = mongoose.model('Comment', commentSchema);
 const Day = mongoose.model('Day', daySchema);
 
-module.exports = { User, Post, Comment, Day };
+module.exports = User, Post, Day;

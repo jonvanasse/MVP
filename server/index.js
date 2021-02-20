@@ -11,6 +11,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(compression());
 app.use(express.static(PUBLIC_DIR));
+
 app.use((req, res, next) => {
   console.log(`${req.method} request coming in for ${req.path}`);
   next();

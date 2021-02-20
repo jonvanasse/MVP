@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
-const { Post, User, Comment, Day } = require('./schemas.js');
+/* const { Post, User, Day } = require('./schemas.js'); */
 const mongoUrl = 'mongodb://localhost/talkingtime';
 
 // eslint-disable-next-line max-len

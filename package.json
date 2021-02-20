@@ -32,6 +32,8 @@
     "morgan": "^1.10.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "vis": "^4.21.0-EOL",
     "vis-timeline": "^7.4.6"
   },
   "devDependencies": {
@@ -44,6 +46,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.2",
     "faker": "^5.4.0",
+    "file-loader": "^6.2.0",
     "nodemon": "^2.0.7",
     "style-loader": "^2.0.0",
     "webpack": "^5.22.0",

@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  background-color: lightblue;
+  background-image:
+    linear-gradient(lightblue,white 80px);
+  border-top: none;
+}
+
+.title {
+  display: flex;
+  padding-top: 3px;
+  justify-content: space-between;
+  font-size: 20px;
+  text-align: center;
+  font-family: Audiowide;
+  color: darkblue;
+}
+
+.title span {
+  margin-left: 100px;
+}
+
+.icon * {
+  margin: 3px 5px 0 5px;
+  padding: 3px 5px 0 5px;
+}
+
+.days {
+  display: flex;
+}

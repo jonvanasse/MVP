@@ -1,0 +1,70 @@
+.container {
+  width: 80%;
+}
+
+.container, .post {
+  margin: 10px;
+  padding: 5px;
+}
+
+.post {
+  width: auto;
+  border: solid lightblue 2px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.user {
+  display: block;
+  font-size: 11px;
+}
+
+.user span {
+  text-decoration-line: underline;
+  color: blue;
+  font-weight: 500;
+}
+
+.reply {
+  position: relative;
+  display: flex;
+}
+
+.reply div {
+  position: absolute;
+  top: -25px;
+  right: 3px;
+
+}
+
+.body {
+  font-size: 13px;
+}
+
+.info {
+  font-size: 12px;
+  padding-bottom: 4px;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(94,94,94);
+}
+
+.communityBar {
+  padding: 3px 10px 3px 10px;
+  vertical-align: center;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  border: solid lightblue 2px;
+  border-bottom: none;
+  border-radius: 5px;
+  background-blend-mode: hue;
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}

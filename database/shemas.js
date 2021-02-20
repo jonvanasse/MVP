@@ -7,45 +7,49 @@ const nouns = ['Donald Trump', 'The EU', 'Arnold Schwarzeneggar', 'Eugene Goodma
 const verbs = ['destroys', 'escapes', 'clickbaits', 'rick rolls', 'enjoys the company of', 'threatens', 'clamours for the attentions of'];
 
 const userSchema = new mongoose.Schema({
-  handle: String,
   user_id: Number, // UNIQUE
+  handle: String,
   handle: String,
   first_name: String,
   last_name: String,
   watching: [String], // POST IDs (NOT OWNED)
-  upvoted: [String], // POST IDs (NOT OWNED)
-  downvoted: [String], // POST IDs (NOT OWNED)
+  agree: [String], // POST IDs (NOT OWNED)
+  disagree: [String], // POST IDs (NOT OWNED)
   posts: [String] // POST IDs (OWNED)
 });
 
 const postSchema = new mongoose.Schema({
+  post_id: Number,
   user_id: Number,
   body: String,
   date_made: Date, // (past or recent)
-  date_fulfill: Date, // MUST be later than date_made
-  upvotes: Number, // Total of watching while agreeing
-  downvotes: Number, // Total of watching while disagreeing
+  date_about: Date, // MUST be later than date_made
+  agrees: [Number], // User Ids
+  agree_count: Number,
+  disagrees: [Number], // User Ids
+  disagree_count: Number,
+  watchers: [Number], // User Ids
   watch_count: Number, // Total Watchers incl. agree/disagrees
   watch_no_vote: Number, // Total Watchers excl. agree/disagrees
-  /*   hindsight: Boolean, // if in the past, true: if in the future, false...
-  clairvoyant: Boolean, // MUST be false if the date is in the future, or else it must be queued for evaluation */
-  topic: String, // only a few topics for the MVP
   comments: [Number] // comment_ids
 });
 
 const commentSchema = new mongoose.Schema({
-  user_id: Number,
+  comment_id: Number,
+  user_id: Number, // Commentor
   parent: Number, // comment_id or post_id
   children: [Number], //comment_ids
   body: String,
   date_made: Date,
-  agree: Boolean
+  agree: Boolean,
+  watching: Boolean
 });
 
 const daySchema = new mongoose.Schema({
   day: Date,
   made: [Number], // post_ids for posts made on this day
-  fulfilled: [Number], // post_ids for posts fulfulled (or not) on this day
+  about: [Number], // post_ids for posts fulfulled (or not) on this day
+  watch_count: Number // count of users watching posts on or about this day
 });
 
 const User = mongoose.model('User', userSchema);
